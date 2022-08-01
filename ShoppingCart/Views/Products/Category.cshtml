@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ShoppingCart.Models.Product>
+
+@{
+    
+    ViewBag.CategorySlug = char.ToUpper(ViewBag.CategorySlug[0]) + ViewBag.CategorySlug.Substring(1);
+    ViewData["Title"] = ViewBag.CategorySlug +  " Products";
+}
+
+<h1> @ViewBag.CategorySlug </h1>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-4">
+            <img src="/media/products/@item.Image" alt="Product Image" class="h-50 img-fluid img-thumbnail rounded d-block mx-auto" />
+            <h4>@item.Name</h4>
+            <p>@item.Description</p>
+            <p>@item.Price.ToString("c2")</p>
+            <p>  <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-Id="@item.Id">Add To Cart</a> </p>
+
+        </div>
+    }
+
+   
+
+
+
+@if (ViewBag.TotalPages > 1)
+{
+    <div class="d-flex w-100 fixed-bottom justify-content-center">
+        <pagination 
+        page-count="@ViewBag.TotalPages" 
+        page-range="@ViewBag.PageRange" 
+        page-number="@ViewBag.PageNumber" 
+        page-target="/Category?categorySlug=@ViewBag.CategorySlug">
+        </pagination>
+    </div>
+}
+
+</div>
+
+@*
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Slug)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+*@

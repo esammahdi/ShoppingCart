@@ -1,0 +1,79 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<div class="row">
+    <div class="col-lg-10">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Image" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+                                                                        
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" value="@Model.Price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="d-block">Current Image</label>
+                 <img src="~/media/products/@Model.Image" class="pt-2" width="200"/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="ImageUpload" class="form-control" />
+                <img id="imgpreview" class="pt-2 w-50" width="200"/>
+                <span asp-validation-for="ImageUpload" class="text-danger float-start"></span>
+            </div>
+
+            <div class="form-group">
+                <button class="btn-primary btn mb-2">Edit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<script>
+        $("#ImageUpload").change( function() {
+            readURL(this);
+            }
+        );
+
+    CKEDITOR.replace( 'Description' );
+</script>
+
+}

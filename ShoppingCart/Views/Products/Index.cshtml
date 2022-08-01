@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ShoppingCart.Models.Product>
+
+@{
+    ViewData["Title"] = "All Products";
+}
+
+<h1>All Products</h1>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-4">
+            <img src="/media/products/@item.Image" alt="" class="h-50 img-fluid img-thumbnail rounded d-block mx-auto" />
+            <h4>@item.Name</h4>
+            <p>@item.Description</p>
+            <p>@item.Price.ToString("c2")</p>
+            <p>  <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-Id="@item.Id">Add To Cart</a> </p>
+
+        </div>
+    }
+
+   
+
+
+
+@if (ViewBag.TotalPages > 1)
+{
+    <div class="d-flex w-100 fixed-bottom justify-content-center">
+        <pagination 
+        page-count="@ViewBag.TotalPages" 
+        page-range="@ViewBag.PageRange" 
+        page-number="@ViewBag.PageNumber" 
+        page-target="/products/@ViewBag.CategorySlug">
+        </pagination>
+    </div>
+}
+
+</div>

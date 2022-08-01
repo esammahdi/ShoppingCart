@@ -1,0 +1,58 @@
+﻿@model CartViewModel
+
+@{
+    ViewBag.Title = "Cart Overview";
+}
+
+
+@if (Model.cartItems.Count > 0)
+{
+    <table class="table table-light table-hover">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th></th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.cartItems)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        <a class="text-white btn btn-primary btn-sm" asp-action="Add" asp-route-Id="@item.Id">+</a>
+                        <a class="text-white btn btn-info btn-sm" asp-action="Decrease" asp-route-Id="@item.Id">-</a>
+                        <a class="text-white btn btn-danger btn-sm" asp-action="Remove" asp-route-Id="@item.Id">Remove</a>
+                    </td>
+                    <td>@item.Price.ToString("C2")</td>
+                    <td>@item.Total</td>
+                </tr>
+
+            }
+
+            <tr>
+                <td class="lead text-right" colspan="5"> <b> <i> Grand Total : @Model.Total.ToString("C2") </i> </b> </td>
+            </tr>
+            <tr>
+                <td colspan="5"> 
+                    <a class="text-right btn btn-primary m-2" > Checkout </a> 
+                    <a class="text-right btn btn-danger" asp-action="Clear"> Clear Cart </a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+}
+else
+{
+    <h3 class="display-4 text-center">Your Cart is Empty</h3>
+
+}
+

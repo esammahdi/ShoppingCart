@@ -1,0 +1,16 @@
+﻿@model SmallCartViewModel
+
+
+@if(Model != null) {
+<p class="text-white">Items in cart : <span class="badge badge-primary">@Model.NumberOfItems</span> </p>
+<p class="text-white">Total Amount : @Model.TotalAmount.ToString("C2")</p>
+<a class="btn btn-primary mb-2" asp-controller="Cart" asp-action="Index">View Cart</a>
+<a class="btn btn-danger mb-2" asp-controller="Cart" asp-action="Clear">Clear Cart</a>
+
+} else {
+<p class="lead m-0 text-white">Your Cart is Empty</p>
+}
+
+
+
+
