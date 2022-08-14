@@ -1,8 +1,8 @@
-ShoppingCart: Asp.NET Core MVC Website 
+ShoppingCart: an Asp.NET Core MVC Website 
 =================================================
 ## _Note: UNDER EDITING!!!_
 
-A dynamic website with CRUD operations made with asp.net core mvc, azure sql server, custom css and bootstrap.
+A responsive and dynamic website with CRUD operations made with asp.net core mvc, azure sql server, custom css and bootstrap.
 
 [![License](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
 [![Latest release](http://img.shields.io/badge/beta-0.1.0-blue.svg?style=flat-square)](./)
