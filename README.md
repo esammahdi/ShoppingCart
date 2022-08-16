@@ -2,9 +2,9 @@ ShoppingCart: an Asp.NET Core MVC Website
 =================================================
 ## _Note: UNDER EDITING!!!_
 
-A responsive and dynamic website with CRUD operations made with asp.net core mvc, azure sql server, custom css and bootstrap.
+A simple responsive and dynamic website with CRUD operations and Identity verification made with ASP.NET Core MVC. You can choose from many database-stored products to add to your cart or you can login to an admin account to add/edit/delete products. 
 
-_WEBSITE_: [shopecart.azurewebsites.net](https://shopecart.azurewebsites.net)
+##### _WEBSITE : [shopecart.azurewebsites.net](https://shopecart.azurewebsites.net)_
 
 [![License](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
 [![Latest release](http://img.shields.io/badge/beta-0.1.0-blue.svg?style=flat-square)](./)
@@ -31,16 +31,9 @@ _WEBSITE_: [shopecart.azurewebsites.net](https://shopecart.azurewebsites.net)
 | :---------------------------:|:----------------------------:|:----------------------------:|:---------------------:|
 | ![](screenshots/image1.png)  |  ![](screenshots/image2.png) | ![](screenshots/image3.png)  |  ![](screenshots/image4.png)|
 
-Made using _Previewed [^1]_
-
-[^1]: https://previewed.app/template/CFA62417
 
 
 </br>
-
-## **Demonstration :**
-
-
 
 Table of contents
 -----------------
@@ -51,7 +44,6 @@ Table of contents
 * [Known issues and limitations](#known-issues-and-limitations)
 * [License](#license)
 * [Authors and history](#authors-and-history)
-* [Acknowledgments](#acknowledgments)
 
 
 
@@ -75,21 +67,10 @@ Known issues and limitations
 License
 -------
 
-This program is distributed under the terms of the [MIT License (MIT)](https://spdx.org/licenses/MIT.html).  The license applies to this file and other files in the [GitHub repository](https://github.com/esammahdi/Processing/edit/main/Terrain%20Generator/) hosting this file.
+This program is distributed under the terms of the [MIT License (MIT)](https://spdx.org/licenses/MIT.html).  The license applies to this file and other files in the [GitHub repository]([https://github.com/esammahdi/Processing/edit/main/Terrain%20Generator/](https://github.com/esammahdi/ShoppingCart/)) hosting this file.
 
 
 Authors and history
 ---------------------------
 
 * Esam Bashir : The original author.
-
-
-Acknowledgments
----------------
-
-Really big thanks to : 
-
-- 100ms blog post [A Comprehensive Guide to Flutter-WebRTC](https://www.100ms.live/blog/flutter-webrtc#about-the-flutter-webrtc-server) .
-- Fireship's [WebRTC in 100 seconds](https://www.youtube.com/watch?v=WmR9IMUD_CY) youtube video.
-- [WebRTC Ventures](https://webrtc.ventures/) for WebRTC explanations.
-- [lamb1engcode](https://github.com/lamb1engcode/sandbox_webrtc-flutter?ref=flutterawesome.com) for assets used in explaining WebRTC.
